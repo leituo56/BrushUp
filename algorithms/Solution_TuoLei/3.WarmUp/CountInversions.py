@@ -43,6 +43,7 @@ def count_inversions(numbers):
     return result
 
 
+# Test
 mylist = [1, 3, 5, 2, 4, 6]
 print mylist
 print count_inversions(numbers=mylist)
