@@ -1,7 +1,7 @@
 __author__ = 'leituo56'
 
 
-#Sorted,
+# Sorted,
 def common_elem_sorted(list1, list2):
     result = list()
     i = j = 0
@@ -17,7 +17,7 @@ def common_elem_sorted(list1, list2):
     return result
 
 
-#Unsorted, brute algorithem O(n^2)
+# Unsorted, brute algorithem O(n^2)
 def common_elem(list1, list2):
     result = list()
     for item in list1:
@@ -27,8 +27,9 @@ def common_elem(list1, list2):
     return result
 
 
-#Test
-my_list1 = range(1, 100, 2)
-my_list2 = range(31, 200, 2)
-print(common_elem(my_list1, my_list2))
-print(common_elem_sorted(my_list1, my_list2))
+# Test Case
+if __name__ == "__main__":
+    my_list1 = range(1, 100, 2)
+    my_list2 = range(31, 200, 2)
+    print(common_elem(my_list1, my_list2))
+    print(common_elem_sorted(my_list1, my_list2))
