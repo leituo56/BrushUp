@@ -1,13 +1,13 @@
 # Algorithms Question Set
 
 ### 1. Sort  
-* Q1. Merge Sort	
+* Q1. Merge Sort
 * Q2. Quick Sort
 
 ### 2. Array/List
-* Q1. Second Largest Elem of an array/lists
-* Q2. Common elements of two arrays/lists, Common elements of two Sorted arrays/lists
-* Q3. Remove duplicate elements from an array/list
+* Q1. Second Largest Element of an Array/List
+* Q2. Common elements of two Arrays/Lists, Common elements of two Sorted arrays/lists
+* Q3. Remove duplicate elements from an Array/List
 * Q4. Biggest Elem of an Unimodal Array/Lists
 
 ### 3. WarmUp
