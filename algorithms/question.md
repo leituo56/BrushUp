@@ -5,7 +5,7 @@
 * Q2. Quick Sort
 
 ### 2. Array/List
-* Q1. Second Largest Element of an Array/List
+* Q1. Second Largest Element of an Array/List. Optional: Less than n + log2n - 2 comparison.
 * Q2. Common elements of two Arrays/Lists, Common elements of two Sorted arrays/lists
 * Q3. Remove duplicate elements from an Array/List
 * Q4. Biggest Elem of an Unimodal Array/Lists
