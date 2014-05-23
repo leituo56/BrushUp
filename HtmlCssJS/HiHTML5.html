@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--Problem: This version is not polyfill yet-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hi, HTML5</title>
+    <style>
+        header, section, footer, aside, nav, main, article, figure {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="css/HiHtml5.css">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--Navigation-->
+<nav>
+    <a href="#">HTML5</a>
+    <a href="#">CSS</a>
+    <a href="#">Javascript</a>
+    <a href="#">Jquery</a>
+</nav>
+
+<!--Header-->
+<header class="head">
+    <h1>Hi HTML5!</h1>
+
+    <p>Tuo Lei's brush up for HTML, CSS and Javascript!</p>
+</header>
+
+
+<div id="left-container">
+    <!--Article-->
+    <article>
+        <header>
+            <h1>Why brush up HTML5?</h1>
+        </header>
+        <p>HTML5 is pretty hot these days and I believe it's the future standard. Browsers will give better support to
+            HTML5
+            in the near future</p>
+
+        <p>This is why I need to brush HTML5</p>
+    </article>
+    <hr>
+    <!--Form-->
+    <section>
+        <header>
+            <h1>HTML5 Form</h1>
+
+            <p>Most of input is not cross Browser</p>
+        </header>
+        <form action="" autocomplete="on">
+            <!--Good Support-->
+            Quantity (between 1 and 5): <input type="number" name="quantity" min="1" max="5" value="3"><br>
+            Range: <input type="range" name="points" min="1" max="10" value="6"><br>
+            Add your homepage: <input type="url" name="homepage" value="http://"><br>
+            <!--Bad Support-->
+            Favorite Color: <input type="color" name="favColor" value="#FF0000"/><br>
+            Birthday: <input type="date" name="birthday"><br>
+            E-mail: <input type="email" name="email" autofocus required><br>
+
+            Data List:
+            <input list="browsers"><br>
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            Select images: <input type="file" name="img" multiple><br>
+            Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code"
+                                 placeholder="3 letters most"><br>
+            <input type="submit">
+        </form>
+        <form action="" oninput="out.value=parseInt(a.value)+parseInt(b.value)" novalidate>0
+            <input type="range" id="a" value="50">100 +
+            <input type="number" id="b" value="50">=
+            <output name="out" for="a b"></output>
+            <input type="image" src="img/img_submit.gif" alt="Submit" width="48" height="48"/>
+        </form>
+    </section>
+    <hr>
+    <!--canvas-->
+    <section>
+        <header>
+            <h1>Canvas</h1>
+
+            <p>Dig this later</p>
+        </header>
+        <canvas id="myCanvas" width="500" height="200" style="border:1px solid #c3c3c3;">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </section>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        //        fill a rect
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 75);
+        //        draw a line
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+        //        draw a circle
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+        //        draw text
+        ctx.fillStyle = "#000000";
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World", 10, 50);
+        ctx.strokeText("Hello World", 30, 80);
+
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 90, 150, 80);
+    </script>
+    <hr>
+
+    <!--video and audio, need poly fill-->
+    <section>
+        <header>
+            <h1>Video and audio</h1>
+
+            <p>May need polyfill, dig later</p>
+        </header>
+        <video width="320" height="240" controls>
+            <source src="video/movie.mp4" type="video/mp4">
+            <source src="video/movie.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+        <audio controls>
+            <source src="video/horse.ogg" type="audio/ogg">
+            <source src="video/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+</div>
+
+<div id="right-container">
+    <!--Side Bar-->
+    <aside>
+        <h2>Side Bar</h2>
+
+        <p>Server-Sent Events Missing</p>
+        <p>WebSocket Missing</p>
+
+        <p>Blog: <a href="http://www.leituo.org" target="_blank">Tuo Lei's programming Hut</a></p>
+    </aside>
+    <hr>
+
+    <!--Drag and Drop-->
+    <aside>
+        <h2>Drag and Drop</h2>
+
+        <p>Dig this Later</p>
+    </aside>
+    <hr>
+
+    <!--local storage-->
+    <aside>
+        <h2>Local Storage</h2>
+
+        <p>Dig this Later</p>
+
+        <p>
+            <button onclick="clickCounter()" type="button">Click me!</button>
+        </p>
+        <div id="result"></div>
+        <p>Click the button to see the counter increase.</p>
+        <script>
+            function clickCounter() {
+                if (typeof (Storage) !== "undefined") {
+                    if (localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                    } else {
+                        localStorage.clickcount = 1;
+                    }
+                    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+                } else {
+                    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                }
+            }
+        </script>
+    </aside>
+    <hr>
+
+    <!--Application Cache-->
+    <aside>
+        <h2>Application Cache</h2>
+
+        <p>Dig this Later</p>
+    </aside>
+    <hr>
+
+    <!--Worker-->
+    <aside>
+        <h2>Worker for calculate square root</h2>
+        <input id="sqrt_input" type="text" value=5><br>
+        <output id="resultSqrt"></output>
+        <br>
+        <button onclick="startWorker()">Get Square Root</button>
+        <button onclick="stopWorker()">Stop</button>
+        <script>
+            var w;
+            function startWorker() {
+                if (typeof(Worker) !== "undefined") {
+                    if (typeof(w) == "undefined") {
+                        w = new Worker("js/sqrt_worker.js");
+                    }
+                    var val = document.getElementById("sqrt_input").value;
+                    w.postMessage(val);
+                    w.onmessage = function (event) {
+                        document.getElementById("resultSqrt").innerHTML = event.data;
+                    };
+                }
+                else {
+                    document.getElementById("resultSqrt").innerHTML = "Sorry, your browser does not support Web Workers...";
+                }
+            }
+            function stopWorker() {
+                w.terminate();
+            }
+        </script>
+    </aside>
+    <hr>
+
+    <!--geo location-->
+    <aside>
+        <h2>Geo location</h2>
+
+        <p>need user to agree</p>
+
+        <p id="demo">Click the button to get your coordinates:</p>
+        <button onclick="getLocation()">Try It</button>
+        <div id="mapholder">
+            map suppose tobe here
+        </div>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script>
+            var x = document.getElementById("demo");
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                        "<br>Longitude: " + position.coords.longitude;
+
+                lat = position.coords.latitude;
+                lon = position.coords.longitude;
+                latlon = new google.maps.LatLng(lat, lon);
+                mapholder = document.getElementById('mapholder');
+                mapholder.style.height = '250px';
+                mapholder.style.width = '500px';
+
+                var myOptions = {
+                    center: latlon,
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false,
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    }
+                };
+                var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+                var marker = new google.maps.Marker({
+                    position: latlon,
+                    map: map,
+                    title: "You are here!"
+                });
+
+            }
+            function showError(error) {
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        x.innerHTML = "User denied the request for Geolocation."
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        x.innerHTML = "Location information is unavailable."
+                        break;
+                    case error.TIMEOUT:
+                        x.innerHTML = "The request to get user location timed out."
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        x.innerHTML = "An unknown error occurred."
+                        break;
+                }
+            }
+        </script>
+    </aside>
+</div>
+
+<!--footer-->
+<footer>
+    <!--details-->
+    <details>
+        <summary>Copyright 2013-2014.</summary>
+        <p> - by Tuo Lei. All Rights Reserved.</p>
+
+        <p>Summary and details seems not that useful.</p>
+    </details>
+
+    <p>Author by: Tuo Lei</p>
+    <time datetime="2014-12-10" pubdate>Dec 10, 14'</time>
+</footer>
+
+</body>
+</html>
