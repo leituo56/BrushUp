@@ -2,3 +2,6 @@ div pre{
     background-color: khaki;
     display: block;
 }
+blockquote{
+    background-color: palegreen;
+}
