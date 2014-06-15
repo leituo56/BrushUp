@@ -1,0 +1,96 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--Auto Component Scan-->
+    <context:component-scan base-package="tutorial" />
+
+    <context:annotation-config />
+
+    <!--Aspect Oriented Programming-->
+    <aop:aspectj-autoproxy />
+
+    <!--Property place holder, Config properties file-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>my.properties</value>
+        </property>
+    </bean>
+
+    <!--Hello Beans-->
+    <bean id="helloBean" class="tutorial.hello.Greeter">
+        <property name="name" value="Steve" />
+    </bean>
+
+    <!--Hello Dependency Injection-->
+    <bean id="animalHelper" class="tutorial.dependencyInjection.AnimalHelper">
+        <property name="animal" ref="cat" />
+    </bean>
+    <bean id="dog" class="tutorial.dependencyInjection.impl.Dog" />
+    <!--Import XML, constructor Dependency Injection-->
+    <import resource="AnotherBeans.xml" />
+
+    <!--3 ways to Inject values to Beans-->
+    <bean id="fileNameNorm" class="tutorial.beans.FileName">
+        <property name="name">
+            <value>Steve</value>
+        </property>
+        <property name="type">
+            <value>txt</value>
+        </property>
+    </bean>
+    <bean id="fileNameShort" class="tutorial.beans.FileName">
+        <property name="name" value="Steve"/>
+        <property name="type" value="avi"/>
+    </bean>
+    <bean id="fileNameP" class="tutorial.beans.FileName" p:name="Steve" p:type="exe"/>
+    <!--Bean Scope-->
+    <bean id="fileNameSingleton" class="tutorial.beans.FileName"/>
+    <bean id="fileNamePrototype" class="tutorial.beans.FileName" scope="prototype"/>
+
+    <!--Bean Data Structures-->
+    <bean id="dataStructure" class="tutorial.beans.DataStructures">
+        <property name="lists">
+            <list>
+                <value>1</value>
+                <ref bean="cat"/>
+                <bean class="tutorial.dependencyInjection.impl.Dog"/>
+            </list>
+        </property>
+        <property name="sets">
+            <set>
+                <value>2</value>
+                <ref bean="dog"/>
+            </set>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="jason" value="1"/>
+                <entry key="yaya" value-ref="dog"/>
+                <entry key="imba">
+                    <bean class="tutorial.dependencyInjection.impl.Dog"/>
+                </entry>
+            </map>
+        </property>
+        <!-- java.util.Properties -->
+        <property name="props">
+            <props>
+                <prop key="admin">${admin.email}</prop>
+                <prop key="support">${support.email}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--Bean Life Cycle-->
+    <bean id="lifeCycle" class="tutorial.beans.LifeCycle">
+        <property name="prop" value="Hahaha"/>
+    </bean>
+
+</beans>

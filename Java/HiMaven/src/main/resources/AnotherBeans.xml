@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--Constructor dependency injection-->
+    <bean id="animalCtorHelper" class="tutorial.dependencyInjection.AnimalCtorHelper">
+        <constructor-arg>
+            <bean class="tutorial.dependencyInjection.impl.Cat" />
+        </constructor-arg>
+    </bean>
+    <bean id="cat" class="tutorial.dependencyInjection.impl.Cat" />
+
+    <!--Aspect-->
+    <!--<bean id="customerBo" class="tutorial.aop.CustomerBoImpl"/>-->
+    <bean id="loggingAspect" class="tutorial.aop.LoggingAspect"/>
+
+
+</beans>
