@@ -25,6 +25,7 @@ public class RestController {
             car.setYear(1999+i);
             cars.add(car);
         }
+        System.out.println("GET /api/cars/ Car List requested");
         return cars;
     }
 
@@ -51,4 +52,5 @@ public class RestController {
         car.setYear(year);
         return car;
     }
+
 }
