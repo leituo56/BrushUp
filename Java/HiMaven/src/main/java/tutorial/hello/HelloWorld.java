@@ -17,12 +17,19 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by leituo56 on 5/29/14.
  */
 public class HelloWorld {
     public static void main(String[] args){
+        char[] aaa = {'1','2','3','4','5','6'};
+        System.out.println(aaa);
+        System.out.println(aaa.toString());
+        System.out.println("abc"+aaa);
+
         //load library form Maven dependencies
         LocalTime t = new LocalTime();
         System.out.println(t);
