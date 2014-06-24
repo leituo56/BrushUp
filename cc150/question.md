@@ -3,6 +3,14 @@
 ## Data Structures
 
 ### Arrays and Strings
+Things need brush up:
+
+* Use/Implement HashMap ( O(1), collision, linked list)
+* Use/Implement ArrayList ( O(1) retrieve, double size when full )
+* String Buffer (Avoid + String in Java)
+
+Questions:
+
 * 1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
 
 * 1.2 Implement a function void reverse(char* str) in C or C++ which reverses a null- terminated string.
@@ -19,4 +27,6 @@ EXAMPLE: Input: "Mr John Smith" Output: "Mr%20Dohn%20Smith"
 * 1.7 Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
 
 * 1.8 Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s i and s2, write code to check if s2 is a rotation of si using only one call to isSubstring (e.g.,"waterbottle"is a rota- tion of"erbottlewat").
+
+* Additional Questions: Bit Manipulation (#5.7), Object-Oriented Design (#8.10), Recursion (#93), Sorting and Searching (#11.6), C++ (#13.10), Moderate (#17.7, #17.8, #17.14
 
