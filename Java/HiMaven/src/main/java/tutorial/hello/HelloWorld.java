@@ -25,10 +25,8 @@ import java.util.ArrayList;
  */
 public class HelloWorld {
     public static void main(String[] args){
-        char[] aaa = {'1','2','3','4','5','6'};
-        System.out.println(aaa);
-        System.out.println(aaa.toString());
-        System.out.println("abc"+aaa);
+
+        System.out.println("Hello Maven Spring!");
 
         //load library form Maven dependencies
         LocalTime t = new LocalTime();
@@ -100,7 +98,7 @@ public class HelloWorld {
         CustomerTest test = (CustomerTest) context.getBean("customerTest");
         test.sayHello();
 
-                ((ConfigurableApplicationContext) context).close();
+        ((ConfigurableApplicationContext) context).close();
 
     }
 }
