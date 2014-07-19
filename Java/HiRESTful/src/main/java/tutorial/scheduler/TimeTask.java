@@ -14,7 +14,7 @@ import java.util.Date;
 @EnableScheduling
 public class TimeTask {
 
-    @Scheduled (fixedRate = 10000)
+    @Scheduled (fixedRate = 30000)
     public void outputTime(){
         System.out.println("Current Time:" + new Date());
     }
