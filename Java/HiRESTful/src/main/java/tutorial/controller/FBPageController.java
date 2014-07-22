@@ -13,7 +13,7 @@ import tutorial.domain.Page;
  */
 
 @Controller
-@RequestMapping ("page")
+@RequestMapping ("fbpage")
 public class FBPageController {
 
     @RequestMapping(value = "{name}", method = RequestMethod.GET)
@@ -21,6 +21,6 @@ public class FBPageController {
         RestTemplate restTemplate = new RestTemplate();
         Page page = restTemplate.getForObject("http://graph.facebook.com/"+name, Page.class);
         modelMap.addAttribute("page", page);
-        return "FbPage";
+        return "tutorial/FbPage";
     }
 }

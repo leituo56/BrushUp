@@ -18,6 +18,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -26,8 +28,14 @@ import java.util.ArrayList;
 public class HelloWorld {
     public static void main(String[] args){
 
+
+        List<String> images = Arrays.asList("abc");
+        images.add(0, "hello");
+        System.out.println(images.toString());
         System.out.println("Hello Maven Spring!");
 
+        return;
+        /*
         //load library form Maven dependencies
         LocalTime t = new LocalTime();
         System.out.println(t);
@@ -99,6 +107,6 @@ public class HelloWorld {
         test.sayHello();
 
         ((ConfigurableApplicationContext) context).close();
-
+*/
     }
 }

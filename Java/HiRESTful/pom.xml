@@ -9,8 +9,10 @@
     <version>0.1.0</version>
     <packaging>war</packaging>
 
+    <!--Store versions of dependencies-->
     <properties>
         <spring.version>4.0.3.RELEASE</spring.version>
+        <jackson.version>2.4.0</jackson.version>
     </properties>
 
     <dependencies>
@@ -37,7 +39,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.4.0</version>
+            <version>${jackson.version}</version>
         </dependency>
 
         <!--MySQL connector-->

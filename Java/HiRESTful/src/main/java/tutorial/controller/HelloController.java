@@ -17,6 +17,6 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String index(ModelMap model){
         model.addAttribute("message", "Haha! Spring MVC Hello Wolrd!");
-        return "hello";
+        return "tutorial/hello";
     }
 }
