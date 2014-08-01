@@ -50,4 +50,10 @@ $(document).ready(function(){
     $('#slide').on('click', function(){
         $('#showHide').slideToggle();
     });
+
+    //Keyboard
+    $('#keyboard').on('change', function(){
+        console.log(this);
+        $('#result').text($(this).val()*2);
+    });
 });
