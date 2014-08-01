@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hi JQuery</title>
+    <link rel="stylesheet" href="css/HiHtml5.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/HiJquery.css">
+</head>
+<body>
+<!--Navigation-->
+<nav>
+    <a href="HiHTML5.html">HTML5</a>
+    <a href="HiHTML.html">HTML</a>
+    <a href="#">CSS</a>
+    <a href="#">Javascript</a>
+    <a href="HiJQuery.html">Jquery</a>
+    <a href="HiBootstrap.html">Bootstrap</a>
+</nav>
+
+<!--Header-->
+<header class="head">
+    <h1>Hi JQuery</h1>
+
+    <p>Tuo Lei's brush up for HTML, CSS and Javascript!</p>
+</header>
+
+<!--left-->
+<div id="left-container">
+    <section>
+        <h1>Selector</h1>
+        <ul id="selectorList">
+            <li>$("#id"), $(".class"), $("element")</li>
+            <li>$("ul li"), $("ul> li"), $("ul li:first"), $("ul li:even")</li>
+        </ul>
+        <ul id="traverseList">
+            <li>$("ul li").first().next().prev()</li>
+            <li>$("ul li").first().parent().children("li")</li>
+            <li>$("ul").find("li")</li>
+            <li>$("ul li").first().parents('.class')</li>
+            <li>$("ul li").first().closest('.class')</li>
+        </ul>
+    </section>
+    <section>
+        <h1>Manipulate DOM</h1>
+        <ul id="dad">
+            <li>$("#dad").append(Elem) is the same as Elem.appendTo($("#dad"))</li>
+            <li id="son">I'm Dad's son!!</li>
+            <li>I'm nobody</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Data and Filter</h1>
+        <ul id="DataList">
+            <li class="red" data-size="13">This is a red one</li>
+            <li class="red" data-size="14">This is a red one</li>
+            <li class="green" data-size="15">This is a green one</li>
+            <li class="green" data-size="16">This is a green one</li>
+        </ul>
+    </section>
+
+    <section id="showHide">
+        <h1>Show and Hide</h1>
+        <div>This is a block</div>
+    </section>
+
+</div>
+
+<!--right-->
+<div id="right-container">
+    <aside>
+        <h2>Basic</h2>
+        <button id="changeHeader" class="btn btn-success">Change Header Text</button>
+        <hr>
+    </aside>
+
+    <aside>
+        <h2>Manipulate DOM</h2>
+        <button id="append" class="btn btn-success">Dad append()</button><br/>
+        <button id="prepend" class="btn btn-success">Dad prepend()</button><br/>
+        <button id="before" class="btn btn-success">Son before()</button><br/>
+        <button id="after" class="btn btn-success">Son after()</button><br/>
+        <hr>
+    </aside>
+
+    <aside id="filterButtonGroup">
+        <h2>Data and Filter</h2>
+        <button class="filterRed btn btn-success">filterRed</button><br/>
+        <button class="filterGreen btn btn-success">filterGreen</button><br/>
+        <hr>
+    </aside>
+
+    <aside>
+        <h2>Show and Hide</h2>
+        <button id="slide" class="btn btn-success">slideToggle, Down, Up</button><br/>
+        <hr>
+    </aside>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/HiJQuery.js"></script>
+</body>
+</html>
