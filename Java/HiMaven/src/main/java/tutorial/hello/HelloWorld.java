@@ -27,15 +27,6 @@ import java.util.List;
  */
 public class HelloWorld {
     public static void main(String[] args){
-
-
-        List<String> images = Arrays.asList("abc");
-        images.add(0, "hello");
-        System.out.println(images.toString());
-        System.out.println("Hello Maven Spring!");
-
-        return;
-        /*
         //load library form Maven dependencies
         LocalTime t = new LocalTime();
         System.out.println(t);
@@ -107,6 +98,6 @@ public class HelloWorld {
         test.sayHello();
 
         ((ConfigurableApplicationContext) context).close();
-*/
+
     }
 }

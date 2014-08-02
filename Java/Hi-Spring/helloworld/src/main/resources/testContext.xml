@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="steve" class="org.leituo.spring.domain.Player">
+        <property name="name" value="Steve"/>
+        <property name="gender" value="Male"/>
+    </bean>
+
+    <bean id="alice" class="org.leituo.spring.domain.Player" p:name="Alice" p:gender="Female"/>
+</beans>
