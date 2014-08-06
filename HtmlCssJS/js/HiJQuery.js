@@ -3,9 +3,20 @@
  */
 var myElem = $('<li class="addedDOM" style="color: darkred">Click to remove(), Bite Me!!!</li>');
 myElem.click(function(){
-    console.log(this)
+    console.log(this);
     this.remove();
-})
+});
+
+//Plugin
+$.fn.blue = function(options){
+    options = $.extend({'left':'10px'}, options);
+    this.each(function(){
+        var li = this;
+        $(li).on('click', 'button', function(){
+            $(li).animate({'margin-left': options.left}, 500).css({'color':'blue'});
+        });
+    });
+};
 
 $(document).ready(function(){
     console.log("HiJQuery.js loaded!");
@@ -56,4 +67,27 @@ $(document).ready(function(){
         console.log(this);
         $('#result').text($(this).val()*2);
     });
+
+    //Plugin Test
+    $('.pluginLi').blue({'left':'50px'});
+
+    //Promise
+    $('#promiseTest').on('click', function(){
+        console.log("Start Deffered!!!");
+        var wait = function(time){
+            var dtd = $.Deferred(); //在函数内部，新建一个Deferred对象
+            var tasks = function(){
+                console.log(time + "执行完毕！");
+                dtd.resolve(time); // 改变Deferred对象的执行状态
+            };
+            setTimeout(tasks,time);
+            return dtd.promise(); // 返回promise对象
+        };
+        $.when(wait(1000), wait(2000))
+            .done(function(result1, result2){
+                console.log(result1, result2)})
+            .fail(function(){ alert("出错啦！"); });
+    });
+
+
 });
