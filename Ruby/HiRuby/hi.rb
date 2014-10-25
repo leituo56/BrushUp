@@ -11,17 +11,19 @@ a.each do |item|
   print item + 1
 end
 puts
+puts a.join '_'
 
+# String sugar
 b = 'Steve is good'
 b['good'] = 'bad'
-puts b
-puts a.join '_'
-puts b.include?'is bad'
-c = Array.new(3, "Hello #{b}")
+puts b # 'Steve is bad'
+
+puts b.include?'is bad' # return true
+c = Array.new(3, "Hello #{b}") # #{var} syntax
 puts c
 
-print [[1,2,3], [4,5,6], 7, [[8,9], 10]].flatten
-print [1,1,1,2,3,4,3,3].uniq
+print [[1,2,3], [4,5,6], 7, [[8,9], 10]].flatten #cat array
+print [1,1,1,2,3,4,3,3].uniq # set()
 puts
 
 # Symbol and Maps
@@ -30,6 +32,7 @@ books['Bible'] = :good
 books['C++'] = :fair
 books['Java'] = :good
 puts books, books.length
+
 ratings = Hash.new(0)
 books.values.each { |rate| ratings[rate] += 1 }
 puts ratings
@@ -158,7 +161,7 @@ python.description
 javascript.description
 
 class Computer
-  $manufacturer = "Mango Computer, Inc."
+  $manufacturer = "Mango Computer, Inc." # global
   @@files = {hello: "Hello, world!"}
 
   def initialize(username, password)
@@ -171,7 +174,7 @@ class Computer
   end
 
   def self.display_files
-    @@files
+    @@files # static
   end
 end
 
