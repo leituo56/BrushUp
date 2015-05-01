@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Process Status</title>
+
+    <style>
+        tr>.error{
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <script type="text/template" id="statusTemplate">
+        <table id="aaa" class="table table-bordered">
+            <tr>
+            <div><%=videoId%></div>
+            <% _.each(stepsStatus, function(value, key, obj) { %>
+                <th class="<%= statusEN2ClassName(value.status) %>"><%= key %></th>
+            <% }); %>
+            </tr>
+            <tr>
+                <% _.each(stepsStatus, function(value, key, obj) { %>
+                <td class="<%= statusEN2ClassName(value.status) %>"><%= statusEN2CN(value.status) %>
+                    <span class='label label-warning hasTooltip'><%= timeToShortCNString(value.endedAt - value.startedAt) %></span>
+                    <div class='hidden'>
+                        <p>开始: <%= timeStampToCNString(value.startedAt) %></p>
+                        <p>结束: <%= timeStampToCNString(value.endedAt) %></p>
+                    </div>
+                </td>
+                <% }); %>
+            </tr>
+        </table>
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Process Status</h1>
+        <div id="content"></div>
+        <table id="aaa" class="table table-bordered">
+            <tr>
+                <th class="success">TRANSCODE</th>
+                <th class="warning">FEATURECAL</th>
+                <th class="error">CAMERATAKE</th>
+                <th class="info">SNAPSHOT</th>
+                <th>RSHOP</th>
+            </tr>
+            <tr>
+                <td class="success">完成</td>
+                <td class="warning">进行中</td>
+                <td class="error">完成</td>
+                <td class="info">失败</td>
+                <td>失败</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+    <script src="js/status.js" ></script>
+</body>
+</html>

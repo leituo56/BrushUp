@@ -5,7 +5,7 @@
 
     <mvc:annotation-driven />
 
-    <mvc:resources mapping="/static/**" location="/static/" />
+    <mvc:resources mapping="/**" location="/" />
 
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
