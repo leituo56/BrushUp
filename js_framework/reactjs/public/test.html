@@ -1,0 +1,32 @@
+<!-- Test.html -->
+<html>
+<head>
+  <title>Test</title>
+  <script src="https://fb.me/react-0.13.2.js"></script>
+  <script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+  <div id = "container">
+    <p>nothing</p>
+  </div>
+
+  <script type="text/jsx">
+    var Hello = React.createClass({
+      render: function() {
+        return(
+          <div>
+            <p>Hello, <input type="text" placeholder="Your name here" />!</p>
+            <p>{this.props.date.toString()}</p>
+          </div>
+        );
+      }
+    });
+
+    React.render(<Hello date={new Date()} />, document.getElementById('container'));
+    setInterval(function(){
+      React.render(<Hello date={new Date()} />, document.getElementById('container'));
+    }, 500);
+  </script>
+</body>
+</html>
